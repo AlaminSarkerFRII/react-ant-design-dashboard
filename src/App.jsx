@@ -1,32 +1,31 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import { Button } from "antd";
-import { RightCircleOutlined } from "@ant-design/icons";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import SideMenu from "./components/SideMenu";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleClick = (e) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  };
-
   return (
-    <div className='App'>
-      <h2>Ant Design Dashboard</h2>
-
-      <Button
-        icons={<RightCircleOutlined />}
-        block
-        loading={isLoading}
-        type='primary'
-        onClick={handleClick}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        width: "100vw",
+        flex: 1,
+      }}
+    >
+      <Header />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flex: 1,
+        }}
       >
-        Submit
-      </Button>
+        <SideMenu />
+        <div>Main Contan</div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
