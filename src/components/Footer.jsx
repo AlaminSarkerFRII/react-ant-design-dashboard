@@ -7,6 +7,8 @@ const Footer = () => {
         height: "60",
         backgroundColor: "lightgray",
         textAlign: "center",
+        bottom: "0",
+        marginTop: "auto",
       }}
     >
       <h2>Footer components</h2>

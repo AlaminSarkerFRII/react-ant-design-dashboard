@@ -1,25 +1,34 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
+import Home from "../App";
+import Layout from "../Layout/Layout";
 import NotFound from "../pages/404";
-import Dashboard from "../pages/Dashboard";
+import DashboardHome from "../pages/Dashboard/Dashboard";
 import SignOut from "../pages/SignOut";
+import UserList from "../pages/UserList";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/signout",
-    element: <SignOut />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
+    element: <Home />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: "/",
+        element: <DashboardHome />,
+      },
+      {
+        path: "/userlist",
+        element: (
+          <Layout title={"User-List"}>
+            <UserList />
+          </Layout>
+        ),
+      },
+      {
+        path: "/signout",
+        element: <SignOut />,
+      },
+    ],
   },
 ]);
 

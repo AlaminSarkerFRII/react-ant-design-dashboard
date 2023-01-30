@@ -19,6 +19,7 @@ const SideMenu = () => {
           navigate(key);
         }
       }}
+      mode='vertical'
       defaultSelectedKeys={[window.location.pathname]} // for default selection
       items={[
         { label: "Home", key: "/", icon: <HomeOutlined /> },
@@ -32,7 +33,7 @@ const SideMenu = () => {
           ],
         },
         { label: "SignOut", key: "/signout", icon: <SignalFilled /> },
-        { label: "Users", key: "/users", icon: <UserAddOutlined /> },
+        { label: "Users", key: "/userlist", icon: <UserAddOutlined /> },
       ]}
       style={{ textAlign: "ceneter" }}
     ></Menu>
