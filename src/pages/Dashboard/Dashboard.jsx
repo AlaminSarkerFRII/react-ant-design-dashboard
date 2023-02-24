@@ -1,13 +1,12 @@
 import React from "react";
 import Layout from "../../Layout/Layout";
 import Products from "../Products";
-import UserList from "../UserList";
+import Profile from "../Profile";
 
 const Dashboard = () => {
   return (
     <Layout>
       <div style={{ width: "100%" }}>
-        <h2>Dashboard Hopme Container</h2>
         <div
           style={{
             display: "flex",
@@ -17,10 +16,9 @@ const Dashboard = () => {
             justifyContent: "center",
           }}
         >
-          <UserList />
+          {/* <UserList /> */}
           <Products />
-          <UserList />
-          <Products />
+          <Profile />
         </div>
       </div>
     </Layout>

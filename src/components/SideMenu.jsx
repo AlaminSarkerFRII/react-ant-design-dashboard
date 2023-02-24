@@ -11,32 +11,31 @@ import { useNavigate } from "react-router-dom";
 const SideMenu = () => {
   const navigate = useNavigate();
   return (
-    <Menu
-      onClick={({ key }) => {
-        if (key === "signout") {
-          // navigate("/");
-        } else {
-          navigate(key);
-        }
-      }}
-      mode='vertical'
-      defaultSelectedKeys={[window.location.pathname]} // for default selection
-      items={[
-        { label: "Home", key: "/", icon: <HomeOutlined /> },
-        {
-          label: "Dashboard",
-          key: "/dashboard",
-          icon: <DashboardOutlined />,
-          children: [
-            { label: "Actives Users", key: "/userList" },
-            { label: "Actives Users", key: "/userList" },
-          ],
-        },
-        { label: "SignOut", key: "/signout", icon: <SignalFilled /> },
-        { label: "Users", key: "/userlist", icon: <UserAddOutlined /> },
-      ]}
-      style={{ textAlign: "ceneter" }}
-    ></Menu>
+    <div style={{ background: "blue", color: "white" }}>
+      <Menu
+        onClick={({ key }) => {
+          if (key === "signout") {
+            // navigate("/");
+          } else {
+            navigate(key);
+          }
+        }}
+        mode="vertical"
+        defaultSelectedKeys={[window.location.pathname]} // for default selection
+        items={[
+          { label: "Home", key: "/", icon: <HomeOutlined /> },
+          {
+            label: "Dashboard",
+            key: "/dashboard",
+            icon: <DashboardOutlined />,
+            children: [{ label: " Users", key: "/profile" }],
+          },
+          { label: "Orders", key: "/signout", icon: <SignalFilled /> },
+          { label: "Profiles", key: "/profile", icon: <UserAddOutlined /> },
+        ]}
+        style={{ textAlign: "ceneter" }}
+      ></Menu>
+    </div>
   );
 };
 
